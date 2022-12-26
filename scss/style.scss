@@ -1,0 +1,6 @@
+@forward 'globals'; // globals/_index.scss
+
+.red {
+  background-color: var(--like);
+  color: var(--twitter);
+}
