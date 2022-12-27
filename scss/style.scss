@@ -1,6 +1,70 @@
 @forward 'globals'; // globals/_index.scss
 
-.red {
-  background-color: var(--like);
-  color: var(--twitter);
+body {
+  // width: min();
+  margin: 0 auto;
+  color: #000;
+}
+img {
+  width: 100%;
+}
+
+.stackoverflow-logo {
+  width: 150px;
+  height: 30px;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header {
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.05),
+    0 2px 8px hsla(0, 0%, 0%, 0.05);
+  background-color: #f8f9f9;
+
+  &__layout {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+    @include flexCenter();
+  }
+
+  &__products {
+    font-size: 14px;
+    padding: 3px 4px;
+    &:hover {
+      background-color: #e3e6e8;
+    }
+  }
+
+  &__search {
+    display: flex;
+    gap: 10px;
+    padding: 3px 4px;
+    width: 45%;
+    border: 0.1px solid rgb(136, 126, 126);
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  &__profile {
+    @include flexCenter();
+
+    &-img {
+      margin-right: 2px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      color: #fff;
+      background-color: #0097a7;
+    }
+  }
+
+  &__list-icons {
+    @include flexCenter();
+    gap: 10px;
+  }
 }

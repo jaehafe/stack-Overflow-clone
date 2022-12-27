@@ -4,8 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  color: var(--white);
 }
 
 html,
@@ -26,6 +24,8 @@ input {
   font-family: u.$font;
 }
 
-html {
-  background: var(--primary);
+ul,
+ol,
+li {
+  list-style: none;
 }
