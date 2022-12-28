@@ -16,6 +16,7 @@
 
 ```bash
 // scss/*
+
 ├── globals
 │   ├── _boilerplate.scss
 │   ├── _colors.scss
