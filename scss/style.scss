@@ -7,8 +7,13 @@
 body {
   // width: min();
   margin: 0 auto;
+  // height: 3000px;
   color: #000;
-  height: 3000px;
+
+  // footer 고정
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 img {
@@ -30,6 +35,7 @@ a {
   color: inherit;
 }
 
+// header
 .header {
   position: fixed;
   width: 100%;
@@ -39,7 +45,8 @@ a {
 
   &__layout {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1300px;
+    min-width: auto;
     margin: 0 auto;
     padding: 10px;
     @include flexCenter();
@@ -56,8 +63,9 @@ a {
   &__search {
     display: flex;
     gap: 10px;
+    margin-right: 8px;
     padding: 3px 4px;
-    width: 45%;
+    width: 60%;
     border: 0.1px solid rgb(136, 126, 126);
     border-radius: 4px;
     background-color: #fff;
@@ -77,29 +85,100 @@ a {
 
   &__list-icons {
     @include flexCenter();
-    gap: 10px;
+    gap: 18px;
   }
 }
 .main-container {
   display: flex;
+  width: calc(100% - 164px);
 }
+
+// layout
 .layout {
   // display: grid;
   // grid-template-columns: 200px 600px 350px;
   display: flex;
   padding-top: 80px;
-  width: 90%;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1264px;
   margin: 0 auto;
   // padding-left: 250px;
 }
 
 .left-sidebar {
-  width: 13%;
+  width: 164px;
   position: sticky;
   height: 100%;
   top: 80px;
   border-right: 1px dashed #e3e6e8;
+
+  &__nav {
+    &-links {
+      display: flex;
+      flex-direction: column;
+
+      &--home {
+        padding: 10px 10px 10px 10px;
+        background-color: #f1f2f3;
+        font-size: 13px;
+        font-weight: 700;
+        border-right: 3px solid #ff0000;
+      }
+
+      &--public {
+        font-size: 13px;
+        color: hsl(210, 8%, 45%);
+
+        &-items {
+          padding: 10px 10px 10px 10px;
+
+          &-logo {
+            padding-left: 5px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.flex {
+  display: flex;
+
+  &-col {
+    flex-direction: column;
+  }
+}
+
+.collective {
+  &__nav {
+    margin-bottom: 20px;
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 10px 10px 10px;
+      color: hsl(210, 8%, 45%);
+      text-transform: uppercase;
+      font-size: 13px;
+
+      &--info-favicon {
+        font-size: 16px;
+      }
+    }
+
+    &-list-title {
+      display: flex;
+      align-items: center;
+      color: hsl(210, 8%, 45%);
+      font-size: 14px;
+
+      &--favicon {
+        padding-right: 5px;
+        // margin-right: 2px;
+        font-size: 20px;
+        color: #ff0000;
+      }
+    }
+  }
 }
 
 .main {
@@ -108,7 +187,7 @@ a {
   //
   width: 100%;
   margin-right: 16px;
-  border: 1px solid #000;
+  border-left: 1px solid #e3e6e8;
 
   &__top {
     margin-bottom: 16px;
@@ -167,13 +246,13 @@ a {
   }
   // questions
   &__question {
-    // border: 1px solid blue;
-    border-top: 1px solid #9ea6ae;
-    border-left: 1px solid #9ea6ae;
+    border-top: 1px solid #e3e6e8;
+    border-left: 1px solid #e3e6e8;
 
     &-container {
       display: flex;
-      padding: 16px 14px 30px 50px;
+
+      padding: 16px 10px 30px 50px;
       // border: 1px solid red;
       background-color: #fdf7e2;
     }
@@ -194,7 +273,7 @@ a {
     }
 
     &-summary {
-      // padding: ;
+      width: 90%;
     }
     &-title {
       h3 {
@@ -273,12 +352,13 @@ a {
   // main end
 }
 
+// right sidebar
 .right-sidebar {
+  width: 400px;
   margin-bottom: 30px;
 
   &__posts {
-    width: 268px;
-
+    // width: 100%;
     &-container {
       margin-bottom: 20px;
       box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05),
@@ -331,6 +411,7 @@ a {
   }
 }
 
+// right sidebar custom filters
 .custom-filters {
   margin-bottom: 20px;
   box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.05),
@@ -581,6 +662,25 @@ a {
   }
 }
 
+// footer
+.footer {
+  margin-top: auto;
+
+  &-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  &__logo {
+    width: 32px;
+    height: 37px;
+  }
+
+  &-nav {
+    &__col {
+    }
+  }
+}
+
 @media (max-width: 992px) {
   .header {
     &__layout {
@@ -612,9 +712,18 @@ a {
 }
 
 @media (max-width: 640px) {
+  .left-sidebar {
+    display: none;
+  }
   .header {
     &__search {
       display: none;
     }
+  }
+  // .layout {
+  //   width: 100%;
+  // }
+  .main-container {
+    width: 100%;
   }
 }

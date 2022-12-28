@@ -9,14 +9,16 @@
 html,
 body,
 #root {
-  max-width: 100vw;
-  max-height: 100vh;
+  // max-width: 100vw;
+  // max-height: 100vh;
 
-  width: 100%;
+  // width: 100%;
+}
+html {
   height: 100%;
 }
 
-*,
+b *,
 button,
 input {
   border: 0;
