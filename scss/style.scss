@@ -110,6 +110,7 @@ a {
   position: sticky;
   height: 100%;
   top: 80px;
+  margin-left: 4px;
   border-right: 1px dashed #e3e6e8;
 
   &__nav {
@@ -355,6 +356,7 @@ a {
 // right sidebar
 .right-sidebar {
   width: 400px;
+  margin-right: 15px;
   margin-bottom: 30px;
 
   &__posts {
@@ -665,18 +667,64 @@ a {
 // footer
 .footer {
   margin-top: auto;
+  color: #babfc4;
+  background-color: #232629;
+
+  //
 
   &-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    max-width: 1264px;
+    width: 100%;
+    margin: 0 auto;
+    // width: min(1264px, 100%);
+    padding: 32px 12px 12px;
+    line-height: 17px;
   }
   &__logo {
-    width: 32px;
-    height: 37px;
+    width: 60px;
+    height: 60px;
+    margin: -12px 0 32px;
   }
 
   &-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     &__col {
+      &--title {
+        margin-bottom: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #babfc4;
+        text-transform: uppercase;
+      }
+
+      &--list {
+        &-item {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 5px;
+          text-transform: capitalize;
+          color: #9199a1;
+          font-size: 13px;
+        }
+      }
+    }
+
+    &__copyright {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #babfc4;
+      font-size: 11px;
+      &-sns-list {
+        display: flex;
+        gap: 10px;
+
+        &-item {
+          text-transform: capitalize;
+        }
+      }
     }
   }
 }
@@ -711,6 +759,38 @@ a {
   }
 }
 
+@media (max-width: 978px) {
+  .footer {
+    &__logo {
+      margin-bottom: 16px;
+    }
+    &-container {
+      display: flex;
+      flex-direction: column;
+      padding-top: 16px;
+      padding-bottom: 20px;
+    }
+    &-nav {
+      display: flex;
+      flex-direction: column;
+      padding-left: 12px;
+      &__col {
+        margin: 0 12px 24px 0;
+        &--title {
+          margin-bottom: 8px;
+        }
+        &--list {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          &-item {
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 640px) {
   .left-sidebar {
     display: none;
@@ -725,5 +805,19 @@ a {
   // }
   .main-container {
     width: 100%;
+  }
+
+  .footer {
+    &__logo {
+      display: none;
+    }
+
+    &-nav {
+      &__col {
+        &--list {
+          flex-wrap: wrap;
+        }
+      }
+    }
   }
 }
