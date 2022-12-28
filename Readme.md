@@ -3,7 +3,7 @@
 ---
 
 - 클론 사이트: [stackoverflow](https://stackoverflow.com/)
-- 클론한 사이트:
+- 클론한 사이트: [stackoverflow-clone](https://stackoverflow-clone-phi.vercel.app/)
 - 기간: 12.26 - 12.29
 - HTML, SCSS
 
