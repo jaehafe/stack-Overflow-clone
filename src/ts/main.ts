@@ -1,22 +1,22 @@
 import '../scss/style.scss';
 import { $ } from './dom';
-import { QuestionList } from './interface/index';
+import { QuestionList, QuestionInfo, Owner } from './interface/index';
 import { Api } from './api';
 
-const showQuestions = (list: QuestionList) => {
+const showQuestions = (list: QuestionList): void => {
   const quesList = list
-    .map((question) => {
+    .map((question: QuestionInfo) => {
       const { view_count, answer_count, link: ques_link, title } = question;
-      const questionTags = question.tags;
+      const questionTags: string[] = question.tags;
 
       const {
         profile_image,
         display_name,
         link: profile_link,
-      } = question.owner;
+      }: Owner = question.owner;
 
       const questionTagTemplate = questionTags
-        .map((tag) => {
+        .map((tag: string) => {
           return `<li class="main__question-tags-items">${tag}</li>`;
         })
         .join('');
