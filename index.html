@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Stack_Overflow_icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Stack Overflow - Where Developers Learn, Share, & Build Careers
+    </title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- google icons filled -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <!-- javascript -->
+    <script type="module" src="/main.js" defer></script>
+    <!-- html start -->
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__layout">
+        <img
+          class="stackoverflow-logo"
+          src="assets/images/stackoverflow.svg"
+          alt="logo"
+        />
+        <div class="header__products">products</div>
+
+        <!-- search input -->
+        <div class="header__search">
+          <span class="material-symbols-outlined header__search-icon">
+            search
+          </span>
+          <input type="search" placeholder="Search..." />
+        </div>
+
+        <!-- profile -->
+        <div class="header__profile">
+          <div class="header__profile-img">J</div>
+          <div class="header__profile-number">1</div>
+        </div>
+
+        <!-- ul -->
+        <ul class="header__list-icons">
+          <li class="header__list-icons-item">
+            <span class="material-symbols-outlined"> dynamic_feed </span>
+          </li>
+
+          <li class="header__list-icons-item">
+            <span class="material-symbols-outlined"> military_tech </span>
+          </li>
+
+          <li class="header__list-icons-item">
+            <span class="material-symbols-outlined"> help </span>
+          </li>
+
+          <li class="header__list-icons-item">
+            <span class="material-symbols-outlined"> ac_unit </span>
+          </li>
+
+          <li class="header__list-icons-item">
+            <span class="material-symbols-outlined"> menu </span>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- layout -->
+    <div class="layout">
+      <!-- left sidebar -->
+      <div class="left-sidebar">
+        <nav class="left-sidebar__nav">
+          <ol class="left-sidebar__nav-links">
+            <li class="left-sidebar__nav-links--home">Home</li>
+            <li class="left-sidebar__nav-links--public">
+              <ol class="left-sidebar__nav-links--public-nav">
+                <li class="left-sidebar__nav-links--public-items">PUBLIC</li>
+                <div class="flex">
+                  <span
+                    class="material-symbols-outlined left-sidebar__nav-links--public-items-logo"
+                  >
+                    public
+                  </span>
+                  <div class="flex-col">
+                    <li class="left-sidebar__nav-links--public-items">
+                      Questions
+                    </li>
+                    <li class="left-sidebar__nav-links--public-items">Tags</li>
+                    <li class="left-sidebar__nav-links--public-items">Users</li>
+                    <li class="left-sidebar__nav-links--public-items">
+                      Companies
+                    </li>
+                  </div>
+                </div>
+              </ol>
+            </li>
+            <!-- COLLECTIVES -->
+            <div class="collective__nav">
+              <div class="collective__nav-title">
+                collectives
+                <span
+                  class="material-symbols-outlined collective__nav-title--info-favicon"
+                >
+                  info
+                </span>
+              </div>
+              <ul>
+                <li class="collective__nav-list-title">
+                  <span
+                    class="material-symbols-outlined collective__nav-list-title--favicon"
+                  >
+                    stars
+                  </span>
+                  Explore Collectives
+                </li>
+              </ul>
+            </div>
+
+            <!-- TEAMS -->
+            <div>
+              <div class="collective__nav-title">
+                teams
+                <span
+                  class="material-symbols-outlined collective__nav-title--info-favicon"
+                >
+                  info
+                </span>
+              </div>
+              <ul>
+                <li class="collective__nav-list-title">
+                  <span
+                    class="material-symbols-outlined collective__nav-list-title--favicon"
+                  >
+                    work_history
+                  </span>
+                  Create free Team
+                </li>
+              </ul>
+            </div>
+          </ol>
+        </nav>
+      </div>
+
+      <!-- main, right sidebar container -->
+      <div class="main-container">
+        <!-- main -->
+        <main class="main">
+          <div class="main__top">
+            <div class="main__top-header">
+              <div><h1>Top Questions</h1></div>
+              <div class="main__top-ask-btn"><a href="#">Ask Question</a></div>
+            </div>
+            <div class="main__top-interesting-tags">
+              <ul class="main__top-interesting-tags-list">
+                <li class="main__top-interesting-tags-items">interesting</li>
+                <li class="main__top-interesting-tags-items">
+                  <div class="main__top-interesting-tags-items--number">
+                    222
+                  </div>
+                  Bountied
+                </li>
+                <li class="main__top-interesting-tags-items">Hot</li>
+                <li class="main__top-interesting-tags-items">Week</li>
+                <li class="main__top-interesting-tags-items">Month</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="questionsDOM">
+            <!-- first questions -->
+            <div class="main__question">
+              <div class="main__question-container">
+                <!-- votes answer views -->
+                <div class="main__question-datas">
+                  <div id="votes" class="main__question-datas-items votes">
+                    0 votes
+                  </div>
+                  <div id="answer" class="main__question-datas-items answer">
+                    <div id="answer_count">1 answer</div>
+                  </div>
+                  <div id="view_count" class="main__question-datas-items views">
+                    29 views
+                  </div>
+                </div>
+                <div class="main__question-summary">
+                  <div class="main__question-title">
+                    <h3 id="title">
+                      javascript object key value giving undefined even its
+                      defined
+                      <a id="link" href="{link}"></a>
+                    </h3>
+                  </div>
+                  <!-- tags -->
+                  <div class="main__question-tags">
+                    <div class="main__question-tags-container">
+                      <ul class="main__question-tags-list">
+                        <li class="main__question-tags-items">
+                          <span
+                            class="material-symbols-outlined main__question-tags-items-visible"
+                          >
+                            visibility </span
+                          >javascript
+                        </li>
+                        <li class="main__question-tags-items">object</li>
+                        <li class="main__question-tags-items">foreach</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="main__question-author-data">
+                    <div
+                      class="main__question-author-data--name id=display_name"
+                    >
+                      <!-- <div class="main__question-author-data--profile"> -->
+                      <img
+                        src="/assets/images/gold.png"
+                        alt="user profile"
+                        class="main__question-author-data--user-profile"
+                        id="profile_image"
+                      />
+                      Mashes
+                      <!-- </div> -->
+                    </div>
+                    <div class="main__question-author-data-asked-number">
+                      <strong id="view_count">43</strong>
+                    </div>
+                    <div
+                      id="ask_time"
+                      class="main__question-author-data--asked-time"
+                    >
+                      asked 1 min ago
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden-max-width900px">
+            Looking for more? Browse the
+            <a href="#">complete list of questions</a>, or popular tags. Help us
+            answer <a href="#">unanswered questions</a>
+          </div>
+        </main>
+
+        <!-- right-sidebar -->
+        <aside class="right-sidebar">
+          <div class="right-sidebar__posts">
+            <div class="right-sidebar__posts-container">
+              <!-- overflow blog -->
+              <div class="overflow-blog">
+                <div class="overflow-blog__posts-title">
+                  <h2>The Overflow Blog</h2>
+                </div>
+                <div class="overflow-blog__posts-paragraph">
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <span
+                      class="material-symbols-outlined overflow-blog__posts-paragraph--edit-btn"
+                    >
+                      edit
+                    </span>
+                    <p>
+                      The three top-paying tech roles in 2022 and the skills you
+                      need to land them
+                      <i>sponsored post</i>
+                    </p>
+                  </div>
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <span
+                      class="material-symbols-outlined overflow-blog__posts-paragraph--edit-btn"
+                    >
+                      edit
+                    </span>
+                    <p>Why the number input is the worst input</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featured on Meta -->
+              <div class="overflow-blog">
+                <div class="overflow-blog__posts-title">
+                  <h2>Featured on Meta</h2>
+                </div>
+                <div class="overflow-blog__posts-paragraph">
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <img
+                      src="/assets/icons/stack.png"
+                      alt=""
+                      class="overflow-blog__posts-paragraph--container-img"
+                    />
+                    <p>
+                      2022 Community Moderator Election Results - now with two
+                      more mods!
+                    </p>
+                  </div>
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <img
+                      src="/assets/icons/stack.png"
+                      alt=""
+                      class="overflow-blog__posts-paragraph--container-img"
+                    />
+                    <p>Navigation and UI research starting soon</p>
+                  </div>
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <img
+                      src="/assets/icons/stack.png"
+                      alt=""
+                      class="overflow-blog__posts-paragraph--container-img"
+                    />
+                    <p>I'm standing down as a moderator</p>
+                  </div>
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <img
+                      src="/assets/icons/stack.png"
+                      alt=""
+                      class="overflow-blog__posts-paragraph--container-img"
+                    />
+                    <p>Temporary policy: ChatGPT is banned</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hot Meta Posts -->
+              <div class="overflow-blog">
+                <div class="overflow-blog__posts-title">
+                  <h2>Hot Meta Posts</h2>
+                </div>
+                <div class="overflow-blog__posts-paragraph">
+                  <div class="overflow-blog__posts-paragraph--container">
+                    <div
+                      class="overflow-blog__posts-paragraph--container-number"
+                    >
+                      21
+                    </div>
+                    <p>
+                      How are bounties awarded to ChatGPT-sourced answerers
+                      handled?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- custom filters -->
+            <div class="custom-filters">
+              <h3 class="custom-filters__title">Custom Filters</h3>
+              <p class="custom-filters__paragraph">
+                <a href="#">Create a custom Filter</a>
+              </p>
+            </div>
+
+            <!-- watched tags -->
+            <div class="watched-tags">
+              <div class="watched-tags__container">
+                <h3 class="watched-tags__container--title">Watched Tags</h3>
+                <h3 class="watched-tags__container--title edit-btn">edit</h3>
+              </div>
+              <div class="watched-tags__list">
+                <ul class="watched-tags__list--flex-wrap">
+                  <li class="watched-tags__list--items">css</li>
+                  <li class="watched-tags__list--items">html</li>
+                  <li class="watched-tags__list--items">javascript</li>
+                  <li class="watched-tags__list--items">reactjs</li>
+                  <li class="watched-tags__list--items">typescript</li>
+                  <li class="watched-tags__list--items">nextjs</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ignored tags -->
+            <div class="ignored-tags">
+              <div class="ignored-tags__title">Ignored Tags</div>
+              <div class="ignored-tags__paragraph">
+                <div class="ignored-tags__paragraph--add-ignored-tags">
+                  Add an ignored tag
+                </div>
+              </div>
+            </div>
+
+            <!-- right sidebar Collectives -->
+            <div class="collectives">
+              <div class="collectives__container">
+                <h3 class="collectives__container--title">Collectives</h3>
+                <a class="collectives__container--see-all-btn">see all</a>
+              </div>
+              <div class="collectives__list">
+                <div class="collectives__list-content">
+                  <img
+                    class="collectives__list-logo--img"
+                    src="/assets/images/gold.png"
+                    alt="collectives logo"
+                  />
+
+                  <div class="collectives__list-data">
+                    <div class="collectives__list-data-container">
+                      <div class="collectives__list-data--name">Twilio</div>
+                      <div class="collectives__list-data--members">
+                        6k Members
+                      </div>
+                    </div>
+                    <div class="collectives__list-data--join-btn">Join</div>
+                  </div>
+                </div>
+                <div class="collectives__list-data--paragraph">
+                  Twilio has democratized channels like voice, text, chat,
+                  video, and email by virtualizing Twilio has democratized
+                  channels like voice, text, chat, video, and email by
+                  virtualizing
+                </div>
+              </div>
+
+              <!-- second collective -->
+              <div class="collectives__list">
+                <div class="collectives__list-content">
+                  <img
+                    class="collectives__list-logo--img"
+                    src="/assets/images/silver.png"
+                    alt="collectives logo"
+                  />
+
+                  <div class="collectives__list-data">
+                    <div class="collectives__list-data-container">
+                      <div class="collectives__list-data--name">WS02</div>
+                      <div class="collectives__list-data--members">
+                        3k Members
+                      </div>
+                    </div>
+                    <div class="collectives__list-data--join-btn">Join</div>
+                  </div>
+                </div>
+                <div class="collectives__list-data--paragraph">
+                  WSO2 solutions give enterprises the flexibility to deploy
+                  applications and WSO2 solutions give enterprises the
+                  flexibility to deploy applications and
+                </div>
+              </div>
+
+              <!-- third collective -->
+              <div class="collectives__list">
+                <div class="collectives__list-content">
+                  <img
+                    class="collectives__list-logo--img"
+                    src="/assets/images/bronze.png"
+                    alt="collectives logo"
+                  />
+
+                  <div class="collectives__list-data">
+                    <div class="collectives__list-data-container">
+                      <div class="collectives__list-data--name">AWS</div>
+                      <div class="collectives__list-data--members">
+                        3k Members
+                      </div>
+                    </div>
+                    <div class="collectives__list-data--join-btn">Join</div>
+                  </div>
+                </div>
+                <div class="collectives__list-data--paragraph">
+                  Amazon Web Services (AWS) is the world’s most comprehensive
+                  and broadly adopted 12312Amazon Web Services (AWS) is the
+                  world’s most comprehensive and broadly adopted
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="network-ques">
+            <h4 class="network-ques__title">Hot Network Questions</h4>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >Why is printf command in shell script giving errors</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >What utility does Superman derive from his secret
+                  identity?</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Under what conditions could a gold planet form?</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Find the 10 largest files in a directory tree</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Counting seconds using QTimer in PyQGIS</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >How do the notions of Crystal structure, unit cell and
+                  supercell fit together?</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Find the 10 largest files in a directory tree</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">How to turn showerhead without creating a leak</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >How do I change the default font size of verbatim at document
+                  level?</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >Calculus problems arising from real research problems</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Why doesn't FindInstance work with inequalities?</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >Did Microsoft really reserve secret APIs in Windows?</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >A visit to the Perth Charterhouse in 1543: help with
+                  translation
+                </a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Why do we care about small sets?</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#">Min 90 c supply conductors warning</a>
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >Why is place of birth shown on European driving licences?</a
+                >
+              </li>
+            </ul>
+
+            <!-- contents -->
+            <ul class="network-ques__contents">
+              <img
+                class="network-ques__contents-img"
+                src="/assets/images/gold.png"
+                alt=""
+              />
+              <li class="network-ques__contents-paragraph">
+                <a href="#"
+                  >What's the little black box on Nedry's Desk in Jurassic
+                  Park?</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <ul class="recent-ques-feed">
+            <img
+              class="recent-ques-feed__img"
+              src="/assets/images/gold.png"
+              alt=""
+            />
+            <li class="recent-ques-feed__link">
+              <a href="#">Recent questions feed</a>
+            </li>
+          </ul>
+        </aside>
+        <!-- right sidebar end -->
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <a href="https://stackoverflow.com"
+          ><img
+            class="footer__logo"
+            src="/Stack_Overflow_icon.svg"
+            alt="footer logo"
+        /></a>
+        <nav class="footer-nav">
+          <!-- nav col 1 -->
+          <div class="footer-nav__col">
+            <h5 class="footer-nav__col--title">stack overflow</h5>
+            <ul class="footer-nav__col--list">
+              <li class="footer-nav__col--list-item">
+                <a href="#">questions</a>
+              </li>
+              <li class="footer-nav__col--list-item"><a href="#">help</a></li>
+            </ul>
+          </div>
+
+          <!-- nav col 2 -->
+          <div class="footer-nav__col">
+            <h5 class="footer-nav__col--title">products</h5>
+            <ul class="footer-nav__col--list">
+              <li class="footer-nav__col--list-item">
+                <a href="#">teams</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">advertising</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">collectives</a>
+              </li>
+              <li class="footer-nav__col--list-item"><a href="#">talent</a></li>
+            </ul>
+          </div>
+
+          <!-- nav col 3 -->
+          <div class="footer-nav__col">
+            <h5 class="footer-nav__col--title">company</h5>
+            <ul class="footer-nav__col--list">
+              <li class="footer-nav__col--list-item">
+                <a href="#">about</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">press</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">work here</a>
+              </li>
+              <li class="footer-nav__col--list-item"><a href="#">legal</a></li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">privacy policy</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">terms of service</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">contact us</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">cookie settings</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">contact us</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">cookie settings</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">cookie policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- nav col 4 -->
+          <div class="footer-nav__col">
+            <h5 class="footer-nav__col--title">stack exchange network</h5>
+            <ul class="footer-nav__col--list">
+              <li class="footer-nav__col--list-item">
+                <a href="#">technology</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">culture & recreation</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">life & arts</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">science</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">professional</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">business</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#"> </a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">API</a>
+              </li>
+              <li class="footer-nav__col--list-item">
+                <a href="#">data</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- nav col copyright -->
+          <div class="footer-nav__copyright">
+            <ul class="footer-nav__copyright-sns-list">
+              <li class="footer-nav__copyright-sns-list-item">
+                <a href="#">blog</a>
+              </li>
+              <li class="footer-nav__copyright-sns-list-item">
+                <a href="#">facebook</a>
+              </li>
+              <li class="footer-nav__copyright-sns-list-item">
+                <a href="#">twitter</a>
+              </li>
+              <li class="footer-nav__copyright-sns-list-item">
+                <a href="#">linkedIn</a>
+              </li>
+              <li class="footer-nav__copyright-sns-list-item">
+                <a href="#">instagram</a>
+              </li>
+            </ul>
+            <p class="footer-nav__copyright-paragrph">
+              Site design / logo © 2022 Stack Exchange Inc; user contributions
+              licensed under
+              <span class="footer-nav__copyright-paragrph--underline"
+                ><a href="https://stackoverflow.com/help/licensing"
+                  >CC BY-SA</a
+                ></span
+              >
+              <span>rev&nbsp;2022.12.21.43127</span>
+            </p>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
