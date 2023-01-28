@@ -13,7 +13,8 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "strict": true
   },
-  "include": ["./src/*"] // 어떤 파일을 js로 변환할 것인지, src 폴더 밑에 모든 파일 대상 변환
+  "include": ["./src/**/*"] // 어떤 파일을 js로 변환할 것인지, src 폴더 밑에 모든 파일 대상 변환
 }

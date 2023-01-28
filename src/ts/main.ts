@@ -1,12 +1,13 @@
-import './scss/style.scss';
-
-const $ = (selector) => document.querySelector(selector);
+import '../scss/style.scss';
+import { $ } from './dom';
+import { QuestionList } from './interface/index';
+import { handleLoading } from './handleLoading';
 
 const BASE_URL = 'https://api.stackexchange.com';
 const PATH_URL = '2.3/questions?order=desc&sort=activity&site=stackoverflow';
 
 const fetchQuestions = async () => {
-  $('.questionsDOM').textContent = `<div class='loading'></div>`;
+  handleLoading.loading();
   try {
     const res = await fetch(`${BASE_URL}/${PATH_URL}`);
     const { items } = await res.json();
@@ -14,36 +15,33 @@ const fetchQuestions = async () => {
     return items;
   } catch (err) {
     console.log(err);
-    $('.questionsDOM').innerHTML = '<p class="error">there was an error</p>';
+    handleLoading.error();
+  } finally {
+    handleLoading.error();
   }
 };
 
-const showQuestions = (list) => {
+const showQuestions = (list: QuestionList) => {
   const quesList = list
     .map((question) => {
-      const {
-        is_answered,
-        view_count,
-        answer_count,
-        link: ques_link,
-        title,
-      } = question;
-      const [...tags] = question.tags;
+      const { view_count, answer_count, link: ques_link, title } = question;
+      const questionTags = question.tags;
+
       const {
         profile_image,
         display_name,
         link: profile_link,
       } = question.owner;
 
+      const questionTagTemplate = questionTags
+        .map((tag) => {
+          return `<li class="main__question-tags-items">${tag}</li>`;
+        })
+        .join('');
+
       // create random number for not in the data of fetch api
       const ranNum_votes = Math.floor(Math.random() * 10);
       const ranNum_asked = Math.floor(Math.random() * 60);
-
-      // const tagItem = `<li class="main__question-tags-items">${tags}</li>`;
-      // console.log(tags);
-      // const displayTag = tags.map((tag) => {
-      //   return $('.main__question-tags-list').innerHTML(tagItem);
-      // });
 
       return `<div class="main__question">
               <div class="main__question-container">
@@ -70,7 +68,7 @@ const showQuestions = (list) => {
                   <div class="main__question-tags">
                     <div class="main__question-tags-container">
                       <ul class="main__question-tags-list">
-                        <li class="main__question-tags-items">${tags}</li>
+                        ${questionTagTemplate}
                       </ul>
                     </div>
                   </div>
