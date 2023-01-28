@@ -50,6 +50,6 @@ yarn run dev
 
 ## Tasks & Issues
 
-- [ ] `question tag` 배열 메서드로 기능 구현(js)
-- [ ] `quesList`함수 return 부분에 html 리터럴을 다 넣지 않고 필요한 부분만 append
-- [ ] api fetch 할 때 success, fail, loading UI 구현
+- [x] `question tag` 배열 메서드로 기능 구현(js)
+- [x] `quesList`함수 return 부분에 html 리터럴을 다 넣지 않고 필요한 부분만 append
+- [x] api fetch 할 때 success, fail, loading UI 구현
