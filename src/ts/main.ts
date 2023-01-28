@@ -1,25 +1,7 @@
 import '../scss/style.scss';
 import { $ } from './dom';
 import { QuestionList } from './interface/index';
-import { handleLoading } from './handleLoading';
-
-const BASE_URL = 'https://api.stackexchange.com';
-const PATH_URL = '2.3/questions?order=desc&sort=activity&site=stackoverflow';
-
-const fetchQuestions = async () => {
-  handleLoading.loading();
-  try {
-    const res = await fetch(`${BASE_URL}/${PATH_URL}`);
-    const { items } = await res.json();
-    console.log(items);
-    return items;
-  } catch (err) {
-    console.log(err);
-    handleLoading.error();
-  } finally {
-    handleLoading.error();
-  }
-};
+import { Api } from './api';
 
 const showQuestions = (list: QuestionList) => {
   const quesList = list
@@ -106,7 +88,7 @@ const showQuestions = (list: QuestionList) => {
 };
 
 const start = async () => {
-  const data = await fetchQuestions();
+  const data = await Api.getAllQuestions();
   showQuestions(data);
 };
 start();
