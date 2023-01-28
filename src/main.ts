@@ -17,7 +17,6 @@ const fetchQuestions = async () => {
     $('.questionsDOM').innerHTML = '<p class="error">there was an error</p>';
   }
 };
-fetchQuestions();
 
 const showQuestions = (list) => {
   const quesList = list
@@ -110,7 +109,6 @@ const showQuestions = (list) => {
 
 const start = async () => {
   const data = await fetchQuestions();
-  console.log(data);
   showQuestions(data);
 };
 start();
