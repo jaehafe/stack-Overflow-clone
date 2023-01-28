@@ -1,4 +1,4 @@
-export interface Owner {
+interface Owner {
   account_id: number;
   reputation: number;
   user_id: number;
