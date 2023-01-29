@@ -32,7 +32,9 @@ const showQuestions = (list: QuestionList): void => {
                   <div id="votes" class="main__question-datas-items votes">
                     ${ranNum_votes} votes
                   </div>
-                  <div id="answer" class="main__question-datas-items answer">
+                  <div id="answer" class="main__question-datas-items ${
+                    answer_count > 0 ? 'answer' : ''
+                  }">
                     <div id="answer_count">${answer_count} answer</div>
                   </div>
                   <div id="view_count" class="main__question-datas-items views">
