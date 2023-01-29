@@ -335,6 +335,7 @@ img {
       &--user-profile {
         width: 16px;
         border-radius: 50%;
+        align-items: center;
       }
 
       display: flex;
@@ -345,6 +346,12 @@ img {
         display: flex;
         align-items: center;
         color: #0a95ff;
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 3px;
+        }
       }
 
       &--asked-time {

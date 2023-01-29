@@ -58,17 +58,17 @@ const showQuestions = (list: QuestionList): void => {
                   </div>
                   <div class="main__question-author-data">
                     <div class="main__question-author-data--name">
-                      <!-- <div class="main__question-author-data--profile"> -->
-
-                      <a id="ques_link" href="${profile_link}"><img
-                      src="${profile_image}"
-                      alt="user profile"
-                      class="main__question-author-data--user-profile"
-                      id="display_name"
-                    />${display_name}</a>
-                      
-                      
-                      <!-- </div> -->
+                    
+                      <a id="ques_link" href="${profile_link}">
+                        <img
+                          src="${profile_image}"
+                          alt="user profile"
+                          class="main__question-author-data--user-profile"
+                          id="display_name"
+                          />
+                        ${display_name}
+                      </a>
+                    
                     </div>
                     <div class="main__question-author-data-asked-number">
                       <strong id="view_count">${view_count}</strong>
